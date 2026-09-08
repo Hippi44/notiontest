@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Падель — Cool Tennis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.hero.padel-hero::before{background:linear-gradient(135deg,rgba(10,30,74,.92)0%,rgba(10,30,74,.6)60%,rgba(0,0,0,.2)100%)}
+.pill-blue{background:rgba(41,82,196,.2);border-color:rgba(41,82,196,.5);color:#7ba4ff}
+.pill-blue .dot{background:#7ba4ff}
+.btn-blue{background:#2952c4;color:#fff;box-shadow:0 4px 20px rgba(41,82,196,.35)}
+.btn-blue:hover{background:#1a3a8f;transform:translateY(-2px)}
+.stat-dark{background:rgba(10,30,74,.9)}
+</style>
+</head>
+<body>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#10005;</button>
+  <a href="index.html">Главная</a><a href="tennis.html">Теннис</a><a href="padel.html">Падель</a><a href="#booking">Записаться</a>
+</div>
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-logo"><span class="badge">CT</span> CoolTennis</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="tennis.html">🎾 Теннис</a></li>
+    <li><a href="padel.html" class="active">🏸 Падель</a></li>
+    <li><a href="#programs">Программы</a></li>
+    <li><a href="#coaches">Тренеры</a></li>
+    <li><a href="#booking" class="nav-cta">Записаться</a></li>
+  </ul>
+  <button class="burger" id="burger"><span></span><span></span><span></span></button>
+</nav>
+<section class="hero padel-hero" style="background-image:url('https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=1800&q=80&fit=crop')">
+  <div class="hero-content">
+    <div class="pill pill-blue"><span class="dot"></span>Тренд 2024 в Москве</div>
+    <h1>Падель — спорт,<br>который <em>захватывает</em></h1>
+    <p>Динамичная смесь тенниса и сквоша. Падель подходит всем — от полного новичка до опытного теннисиста. Острые ощущения уже с первого занятия!</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn btn-primary">🏸 Записаться на пробное</a>
+      <a href="#about-padel" class="btn btn-outline">Что такое падель?</a>
+    </div>
+  </div>
+  <div class="hero-stats" style="background:rgba(10,30,74,.88)">
+    <div class="stat"><strong>4</strong><span>падель-корта</span></div>
+    <div class="stat"><strong>5</strong><span>тренеров</span></div>
+    <div class="stat"><strong>300+</strong><span>учеников</span></div>
+    <div class="stat"><strong>↑1</strong><span>день обучения</span></div>
+  </div>
+</section>
+<section style="padding:90px 5%;background:#fff" id="about-padel">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div class="reveal">
+      <span class="section-label" style="color:#2952c4">О спорте</span>
+      <h2 class="section-title">Что такое<br><em>падель</em>?</h2>
+      <p style="color:#6b7f72;line-height:1.75;margin-bottom:1.5rem">Падель — это командная ракеточная игра на закрытом корте со стеклянными стенами. Корт меньше теннисного, играют в парах: 2 на 2. Мяч можно отбивать от стены, что делает игру очень динамичной и зрелищной.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem">
+        <div style="background:#f0f4ff;border-radius:12px;padding:1rem;text-align:center"><div style="font-size:1.8rem;margin-bottom:.3rem">🤝</div><div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:.85rem;color:#1a3a8f">Командная игра</div><div style="font-size:.78rem;color:#6b7f72;margin-top:.2rem">2 на 2 — всегда весело</div></div>
+        <div style="background:#f0f4ff;border-radius:12px;padding:1rem;text-align:center"><div style="font-size:1.8rem;margin-bottom:.3rem">⚡</div><div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:.85rem;color:#1a3a8f">Быстрое обучение</div><div style="font-size:.78rem;color:#6b7f72;margin-top:.2rem">Уже с 1-го занятия</div></div>
+        <div style="background:#f0f4ff;border-radius:12px;padding:1rem;text-align:center"><div style="font-size:1.8rem;margin-bottom:.3rem">📊</div><div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:.85rem;color:#1a3a8f">Для любого уровня</div><div style="font-size:.78rem;color:#6b7f72;margin-top:.2rem">Не нужен опыт</div></div>
+        <div style="background:#f0f4ff;border-radius:12px;padding:1rem;text-align:center"><div style="font-size:1.8rem;margin-bottom:.3rem">🏸</div><div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:.85rem;color:#1a3a8f">Инвентарь включён</div><div style="font-size:.78rem;color:#6b7f72;margin-top:.2rem">Лопатка и мячи</div></div>
+      </div>
+      <a href="#booking" class="btn btn-blue">🏸 Попробовать бесплатно</a>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <div style="position:relative;border-radius:20px;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=800&q=80&fit=crop" alt="Падель" style="width:100%;height:480px;object-fit:cover" loading="lazy">
+        <div style="position:absolute;top:16px;left:16px;background:#2952c4;color:#fff;border-radius:100px;padding:.4rem 1rem;font-family:Montserrat,sans-serif;font-weight:700;font-size:.75rem;letter-spacing:1px">🔥 ТРЕНД 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="padding:90px 5%;background:#f0f4ff" id="programs">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-center reveal"><span class="section-label" style="color:#2952c4">Программы</span><h2 class="section-title">Программы <em>по паделю</em></h2><p class="section-sub">Начни с нуля или совершенствуй игру — программа найдётся для любого.</p></div>
+    <div class="grid-4">
+      <div class="prog-card reveal reveal-delay-1">
+        <div class="prog-card-head" style="background:linear-gradient(135deg,#1a3a8f,#2952c4)"><div class="bg-icon">🏸</div><span class="tag">С нуля</span><h3>Начинающие</h3><p>Полный ноль — ты быстро научишься играть и полюбишь падель</p></div>
+        <div class="prog-card-body"><ul class="prog-features"><li>Группы 4 человека</li><li>Основы техники с нуля</li><li>Игровой подход</li><li>Инвентарь включён</li><li>3 занятия в неделю</li></ul><div class="prog-price">от 2 000 ₽<span> / занятие</span></div><a href="#booking" class="btn-block" style="background:#2952c4">Записаться</a></div>
+      </div>
+      <div class="prog-card reveal reveal-delay-2">
+        <div class="prog-card-head" style="background:linear-gradient(135deg,#0a3a6e,#1562b5)"><div class="bg-icon">📈</div><span class="tag">Развитие</span><h3>Продвинутые</h3><p>Уже играешь? Подними уровень и отточи технику до автоматизма</p></div>
+        <div class="prog-card-body"><ul class="prog-features"><li>Группы до 4 человек</li><li>Разбор тактики</li><li>Игровые ситуации</li><li>Спарринг с тренерами</li><li>Видеоанализ</li></ul><div class="prog-price">от 2 500 ₽<span> / занятие</span></div><a href="#booking" class="btn-block" style="background:#2952c4">Записаться</a></div>
+      </div>
+      <div class="prog-card reveal reveal-delay-3">
+        <div class="prog-card-head" style="background:linear-gradient(135deg,#2e7d52,#48a06e)"><div class="bg-icon">⚡</div><span class="tag">Эффективно</span><h3>Индивидуально</h3><p>Персональные тренировки — максимальный прогресс за минимум времени</p></div>
+        <div class="prog-card-body"><ul class="prog-features"><li>Тренер только с тобой</li><li>Индивидуальный план</li><li>Любой график</li><li>Быстрый результат</li><li>Видеоанализ техники</li></ul><div class="prog-price">от 4 000 ₽<span> / час</span></div><a href="#booking" class="btn-block" style="background:#2952c4">Записаться</a></div>
+      </div>
+      <div class="prog-card reveal reveal-delay-1">
+        <div class="prog-card-head" style="background:linear-gradient(135deg,#5c1a6e,#8f2ac4)"><div class="bg-icon">🏆</div><span class="tag">Турнир</span><h3>Турнирный падель</h3><p>Соревнования, рейтинги, призы и незабываемые эмоции</p></div>
+        <div class="prog-card-body"><ul class="prog-features"><li>Ежемесячные турниры</li><li>Рейтинг игроков</li><li>Призы и кубки</li><li>Разбор матчей</li><li>Фотосъёмка</li></ul><div class="prog-price">от 1 500 ₽<span> / участник</span></div><a href="#booking" class="btn-block" style="background:#2952c4">Участвовать</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:#0a1e4a;padding:90px 5%" id="courts">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="court-grid">
+      <div class="reveal">
+        <span class="section-label" style="color:rgba(123,164,255,.8)">Инфраструктура</span>
+        <h2 class="section-title" style="color:#fff">Наши <em style="color:#7ba4ff">падель-корты</em></h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.7)">4 профессиональных падель-корта с российским покрытием — играй круглый год.</p>
+        <div class="court-features">
+          <div class="court-feature"><div class="ico">🏸</div><h4>Падель-корты (4 шт)</h4><p>Крытые, доступны весь год, температура +18°</p></div>
+          <div class="court-feature"><div class="ico">🔮</div><h4>Панорамный корт</h4><p>Стеклянные стены, широкий обзор для зрителей</p></div>
+          <div class="court-feature"><div class="ico">💡</div><h4>LED-освещение</h4><p>Профессиональное освещение для вечерних игр</p></div>
+          <div class="court-feature"><div class="ico">🎥</div><h4>Камеры на корте</h4><p>Запись матчей для анализа и воспоминаний</p></div>
+        </div>
+      </div>
+      <div class="court-img-wrap reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1595435742656-5272d0b3fa82?w=800&q=80&fit=crop" alt="Падель-корт" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+<section style="padding:90px 5%;background:#fff" id="coaches">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-center reveal"><span class="section-label" style="color:#2952c4">Команда</span><h2 class="section-title">Тренеры <em>по паделю</em></h2><p class="section-sub">Сертифицированные тренеры FIP. Опыт игры на международных турнирах по паделю.</p></div>
+    <div class="grid-3">
+      <div class="coach-card reveal reveal-delay-1"><div class="coach-initials" style="background:linear-gradient(135deg,#1a3a8f,#2952c4)">🏸</div><div class="coach-info"><div class="coach-name">Иван Морозов</div><span class="coach-role" style="color:#2952c4">Главный тренер по паделю · 8 лет</span><p class="coach-bio">Чемпион России по паделю 2019. Участник международных турниров FIP. Сертификат FIP Level 3.</p></div></div>
+      <div class="coach-card reveal reveal-delay-2"><div class="coach-initials" style="background:linear-gradient(135deg,#0a3a6e,#1562b5)">📊</div><div class="coach-info"><div class="coach-name">Анастасия Петрова</div><span class="coach-role" style="color:#2952c4">Тренер · 5 лет</span><p class="coach-bio">Специализация — групповые тренировки и тактика игры на параллельных кортах. Сертификат FIP Level 2.</p></div></div>
+      <div class="coach-card reveal reveal-delay-3"><div class="coach-initials" style="background:linear-gradient(135deg,#2952c4,#4872e8)">⚡</div><div class="coach-info"><div class="coach-name">Сергей Николаев</div><span class="coach-role" style="color:#2952c4">Тренер · 6 лет</span><p class="coach-bio">Бывший теннисист. Перешёл в падель 5 лет назад. Отлично подходит для теннисистов, переходящих в падель.</p></div></div>
+    </div>
+  </div>
+</section>
+<section style="padding:90px 5%;background:#f0f4ff" id="schedule">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="reveal"><span class="section-label" style="color:#2952c4">Расписание</span><h2 class="section-title">Расписание <em>по паделю</em></h2></div>
+    <div class="tabs reveal">
+      <button class="tab-btn active" data-group="p-week" style="background:#2952c4;color:#fff;border-color:#2952c4">Пн – Пт</button>
+      <button class="tab-btn" data-group="p-weekend">Выходные</button>
+    </div>
+    <div id="p-week"><table class="schedule-table"><thead style="background:#2952c4"><tr><th>Время</th><th>Программа</th><th>Тренер</th><th>Корт</th><th>Места</th></tr></thead><tbody><tr><td>09:00–10:30</td><td>Начинающие</td><td>И. Морозов</td><td>Падель №1</td><td><span class="badge-available">3 свободно</span></td></tr><tr><td>11:00–12:30</td><td>Продвинутые</td><td>А. Петрова</td><td>Падель №2</td><td><span class="badge-available">2 свободно</span></td></tr><tr><td>18:00–19:30</td><td>Начинающие вечер</td><td>С. Николаев</td><td>Падель №3</td><td><span class="badge-available">4 свободно</span></td></tr><tr><td>20:00–21:30</td><td>Индивидуально</td><td>И. Морозов</td><td>Падель №4</td><td><span class="badge-booking">Записаться</span></td></tr></tbody></table></div>
+    <div id="p-weekend" style="display:none"><table class="schedule-table"><thead style="background:#2952c4"><tr><th>Время</th><th>Программа</th><th>Тренер</th><th>Корт</th><th>Места</th></tr></thead><tbody><tr><td>10:00–12:00</td><td>Турнирный день</td><td>Тренеры</td><td>Все корты</td><td><span class="badge-available">Открыта регистрация</span></td></tr><tr><td>12:30–14:00</td><td>Продвинутые</td><td>А. Петрова</td><td>Падель №2</td><td><span class="badge-available">2 свободно</span></td></tr><tr><td>15:00–16:30</td><td>Микс-группа</td><td>С. Николаев</td><td>Падель №1</td><td><span class="badge-booking">Записаться</span></td></tr></tbody></table></div>
+  </div>
+</section>
+<section style="background:linear-gradient(135deg,#0a1e4a 0%,#1a2e6a 50%,#1a3a8f 100%);position:relative;overflow:hidden" id="booking">
+  <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=1200&q=30&fit=crop')center/cover;opacity:.07"></div>
+  <div style="position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:90px 0">
+    <div class="booking-grid">
+      <div class="booking-info">
+        <span class="section-label" style="color:rgba(123,164,255,.8)">Запись онлайн</span>
+        <h2 class="section-title" style="color:#fff">Запишись на<br><em style="color:#7ba4ff">падель</em> сегодня</h2>
+        <p style="color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:2rem">Первое занятие бесплатно для всех новых учеников. Инвентарь включён!</p>
+        <div class="steps">
+          <div class="step"><div class="step-num" style="background:#7ba4ff;color:#0a1e4a">1</div><div class="step-text"><h4 style="color:#fff">Выбери программу</h4><p style="color:rgba(255,255,255,.7)">Начинающие, продвинутые, индивидуально</p></div></div>
+          <div class="step"><div class="step-num" style="background:#7ba4ff;color:#0a1e4a">2</div><div class="step-text"><h4 style="color:#fff">Укажи время</h4><p style="color:rgba(255,255,255,.7)">Гибкое расписание — 7:00 до 23:00</p></div></div>
+          <div class="step"><div class="step-num" style="background:#7ba4ff;color:#0a1e4a">3</div><div class="step-text"><h4 style="color:#fff">Инвентарь включён</h4><p style="color:rgba(255,255,255,.7)">Предоставим лопатку и мячи для новичков</p></div></div>
+          <div class="step"><div class="step-num" style="background:#7ba4ff;color:#0a1e4a">4</div><div class="step-text"><h4 style="color:#fff">Получи подтверждение</h4><p style="color:rgba(255,255,255,.7)">Перезвоним в течение 15 минут</p></div></div>
+        </div>
+        <div style="margin-top:1.5rem;padding:1.2rem;background:rgba(123,164,255,.15);border:1px solid rgba(123,164,255,.4);border-radius:12px"><p style="color:rgba(255,255,255,.9);font-size:.9rem">🏸 <strong>Первое занятие бесплатно</strong> + инвентарь включён!</p></div>
+      </div>
+      <div class="reveal">
+        <div class="widget-box">
+          <div class="widget-box-header"><span class="ico">🏸</span><h3>Запись на падель</h3></div>
+          <p>Выберите программу и удобное время — инвентарь включён</p>
+          <div class="widget-tabs">
+            <button class="widget-tab active" style="background:#2952c4;color:#fff;border-color:#2952c4">Начинающие</button>
+            <button class="widget-tab">Продвинутые</button>
+            <button class="widget-tab">Индивидуально</button>
+          </div>
+          <div style="background:#f0f4ff;border-radius:12px;padding:1rem;margin:1rem 0">
+            <div style="font-family:Montserrat,sans-serif;font-weight:600;font-size:.78rem;color:#2952c4;margin-bottom:.6rem;letter-spacing:1px">БЛИЖАЙШЕЕ СВОБОДНОЕ ВРЕМЯ</div>
+            <div style="display:flex;flex-direction:column;gap:.4rem">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.65rem .9rem;background:#fff;border-radius:10px;cursor:pointer;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#2952c4'" onmouseout="this.style.borderColor='transparent'">
+                <div><span style="font-family:Montserrat,sans-serif;font-weight:700;font-size:.92rem">Сегодня 18:00</span><span style="color:#6b7f72;font-size:.8rem;margin-left:.6rem">Начинающие</span></div>
+                <span style="background:rgba(41,82,196,.12);color:#2952c4;padding:.2rem .7rem;border-radius:100px;font-size:.75rem;font-weight:600">4 места</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.65rem .9rem;background:#fff;border-radius:10px;cursor:pointer;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#2952c4'" onmouseout="this.style.borderColor='transparent'">
+                <div><span style="font-family:Montserrat,sans-serif;font-weight:700;font-size:.92rem">Завтра 09:00</span><span style="color:#6b7f72;font-size:.8rem;margin-left:.6rem">Начинающие</span></div>
+                <span style="background:rgba(41,82,196,.12);color:#2952c4;padding:.2rem .7rem;border-radius:100px;font-size:.75rem;font-weight:600">3 места</span>
+              </div>
+            </div>
+          </div>
+          <div class="widget-divider"></div>
+          <div id="SiteWidgetMoyklass94033"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="cta-banner"><h2>Хочешь попробовать теннис?</h2><p>У нас есть 6 профессиональных теннисных кортов и 15 опытных тренеров</p><a href="tennis.html" class="btn btn-dark">🎾 Узнать о теннисе</a></div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-brand-logo"><span class="badge">CT</span> CoolTennis</div><p>Профессиональный клуб в Москве. Теннис и падель для всех уровней.</p></div>
+    <div class="footer-col"><h4>Падель</h4><ul><li><a href="#programs">Программы</a></li><li><a href="#coaches">Тренеры</a></li><li><a href="#schedule">Расписание</a></li><li><a href="#courts">Корты</a></li></ul></div>
+    <div class="footer-col"><h4>Клуб</h4><ul><li><a href="index.html">Главная</a></li><li><a href="tennis.html">Теннис</a></li><li><a href="index.html#contacts">Контакты</a></li></ul></div>
+    <div class="footer-col"><h4>Контакты</h4><ul><li><a href="index.html#contacts">Москва, ул. Теннисная, 12</a></li><li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li><li><a href="mailto:info@cooltennis.ru">info@cooltennis.ru</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2024 Cool Tennis. Все права защищены.</p><p>Политика конфиденциальности</p></div>
+</footer>
+<a href="#booking" class="float-book" id="floatBtn" style="background:#2952c4;box-shadow:0 4px 24px rgba(41,82,196,.5)">🏸 Записаться</a>
+<script src="https://app.moyklass.com/api/site/widget/?id=01jTgT6XCVf9o6hPAY44QZKUF3wk4MKYrXnh" type="text/javascript" charset="UTF-8"></script>
+<script src="js/main.js"></script>
+<script>
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');b.style.background='';b.style.color='';b.style.borderColor='';});
+    btn.classList.add('active');btn.style.background='#2952c4';btn.style.color='#fff';btn.style.borderColor='#2952c4';
+    const g=btn.dataset.group;document.querySelectorAll('#p-week,#p-weekend').forEach(c=>c.style.display='none');
+    const t=document.getElementById(g);if(t)t.style.display='';
+  });
+});
+document.querySelectorAll('.widget-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.widget-tab').forEach(t=>{t.classList.remove('active');t.style.background='';t.style.color='';t.style.borderColor='';});
+    tab.classList.add('active');tab.style.background='#2952c4';tab.style.color='#fff';tab.style.borderColor='#2952c4';
+  });
+});
+</script>
+</body>
+</html>

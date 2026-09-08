@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Теннис — Cool Tennis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#10005;</button>
+  <a href="index.html">Главная</a><a href="tennis.html">Теннис</a><a href="padel.html">Падель</a><a href="#booking">Записаться</a>
+</div>
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-logo"><span class="badge">CT</span> CoolTennis</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="tennis.html" class="active">🎾 Теннис</a></li>
+    <li><a href="padel.html">🏸 Падель</a></li>
+    <li><a href="#programs">Программы</a></li>
+    <li><a href="#coaches">Тренеры</a></li>
+    <li><a href="#booking" class="nav-cta">Записаться</a></li>
+  </ul>
+  <button class="burger" id="burger"><span></span><span></span><span></span></button>
+</nav>
+<section class="hero" style="background-image:url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1800&q=80&fit=crop')">
+  <div class="hero-content">
+    <div class="pill"><span class="dot"></span>Теннис в Москве</div>
+    <h1>Большой теннис<br>в <em>Cool Tennis</em></h1>
+    <p>Профессиональные тренировки для всех уровней — от первого занятия до турниров. Современные корты, сертифицированные тренеры и гибкое расписание.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn btn-primary">🎾 Записаться на пробное</a>
+      <a href="#programs" class="btn btn-outline">Смотреть программы</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><strong>6</strong><span>кортов</span></div>
+    <div class="stat"><strong>15</strong><span>тренеров</span></div>
+    <div class="stat"><strong>500+</strong><span>учеников</span></div>
+    <div class="stat"><strong>12+</strong><span>лет опыта</span></div>
+  </div>
+</section>
+<section style="padding:90px 5%;background:#fff" id="programs">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-center reveal">
+      <span class="section-label">Программы</span>
+      <h2 class="section-title">Найди программу <em>для себя</em></h2>
+      <p class="section-sub">Групповые и индивидуальные занятия для взрослых и детей любого уровня.</p>
+    </div>
+    <div class="grid-4">
+      <div class="prog-card reveal reveal-delay-1">
+        <div class="prog-card-head" style="background:linear-gradient(135deg,#1a5c3a,#2e7d52)"><div class="bg-icon">🎾</div><span class="tag">Популярное</span><h3>Взрослые группы</h3><p>Тренировки для взрослых любого уровня — от первой ракетки до опытных любителей</p></div>
+        <div class="prog-card-body"><ul class="prog-features"><li>Группы до 6 человек</li><li>Пн, Ср, Пт и выходные</li><li>Тренер на весь урок</li><li>Мячи включены</li></ul><div class="prog-price">от 2 500 ₽<span> / занятие</span></div><a href="#booking" class="btn-block">Записаться</a></div>
+      </div>
+      <div class="prog-card reveal reveal-delay-2">
+        <div class="prog-card-head" style="background:linear-gradient(135deg,#d4a017,#e8b820)"><div class="bg-icon">👶</div><span class="tag">Дети</span><h3>Детская секция</h3><p>Занятия для детей от 4 лет — игровой подход, который влюбляет в теннис</p></div>
+        <div class="prog-card-body"><ul class="prog-features"><li>Возраст от 4 до 16 лет</li><li>Игровой подход</li><li>Мини-корты для малышей</li><li>Турниры и соревнования</li></ul><div class="prog-price">от 1 800 ₽<span> / занятие</span></div><a href="#booking" class="btn-block">Записаться</a></div>
+      </div>
+      <div class="prog-card reveal reveal-delay-3">
+        <div class="prog-card-head" style="background:linear-gradient(135deg,#1a3a8f,#2952c4)"><div class="bg-icon">⚡</div><span class="tag">Эффективно</span><h3>Индивидуально</h3><p>Персональные тренировки с тренером — максимальная эффективность</p></div>
+        <div class="prog-card-body"><ul class="prog-features"><li>Тренер только с тобой</li><li>Любой удобный график</li><li>Видеоразбор техники</li><li>Быстрый прогресс</li></ul><div class="prog-price">от 4 500 ₽<span> / час</span></div><a href="#booking" class="btn-block">Записаться</a></div>
+      </div>
+      <div class="prog-card reveal reveal-delay-1">
+        <div class="prog-card-head" style="background:linear-gradient(135deg,#5c1a1a,#8f2a2a)"><div class="bg-icon">🏢</div><span class="tag">Команды</span><h3>Корпоративный</h3><p>Теннис для команд — корпоративы, тимбилдинг и турниры</p></div>
+        <div class="prog-card-body"><ul class="prog-features"><li>Аренда кортов целиком</li><li>Тренер для группы</li><li>Организация турниров</li><li>Выездные занятия</li></ul><div class="prog-price">от 15 000 ₽<span> / событие</span></div><a href="#booking" class="btn-block">Оставить заявку</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="courts-section" style="padding:90px 5%" id="courts">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="court-grid">
+      <div class="reveal">
+        <span class="section-label">Инфраструктура</span>
+        <h2 class="section-title">Наши <em>теннисные корты</em></h2>
+        <p class="section-sub">6 кортов с профессиональным покрытием — играй в любое время года в любую погоду.</p>
+        <div class="court-features">
+          <div class="court-feature"><div class="ico">🏟️</div><h4>Хард (4 корта)</h4><p>Крытые, с подогревом, доступны весь год</p></div>
+          <div class="court-feature"><div class="ico">🌿</div><h4>Грунт (2 корта)</h4><p>Открытые, классическое красное покрытие</p></div>
+          <div class="court-feature"><div class="ico">💡</div><h4>LED-освещение</h4><p>Играй хоть до полуночи в любом из кортов</p></div>
+          <div class="court-feature"><div class="ico">🛋️</div><h4>Лаундж-зона</h4><p>Кафе, раздевалки и зона отдыха после игры</p></div>
+        </div>
+      </div>
+      <div class="court-img-wrap reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=800&q=80&fit=crop" alt="Теннисный корт" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+<section style="padding:90px 5%;background:#fff" id="coaches">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-center reveal"><span class="section-label">Команда</span><h2 class="section-title">Наши <em>тренеры</em></h2><p class="section-sub">Профессионалы с опытом работы на турнирах ATP и WTA.</p></div>
+    <div class="grid-3">
+      <div class="coach-card reveal reveal-delay-1"><div class="coach-initials">🎾</div><div class="coach-info"><div class="coach-name">Алексей Соколов</div><span class="coach-role">Главный тренер · 15 лет опыта</span><p class="coach-bio">Экс-профессионал ATP, специалист по технике удара и тактике одиночной игры. Подготовил 3 победителя юниорских чемпионатов.</p></div></div>
+      <div class="coach-card reveal reveal-delay-2"><div class="coach-initials">🏅</div><div class="coach-info"><div class="coach-name">Мария Волкова</div><span class="coach-role">Тренер · 10 лет опыта</span><p class="coach-bio">Специалист по детскому теннису и групповым занятиям. Автор методики Cool Kids Tennis для детей от 4 лет.</p></div></div>
+      <div class="coach-card reveal reveal-delay-3"><div class="coach-initials">⚡</div><div class="coach-info"><div class="coach-name">Дмитрий Коваль</div><span class="coach-role">Тренер · 8 лет опыта</span><p class="coach-bio">Специализация — физподготовка теннисистов и индивидуальные тренировки высокой интенсивности. Сертификат ITF Level 3.</p></div></div>
+    </div>
+  </div>
+</section>
+<section style="padding:90px 5%;background:#f5f9f6" id="schedule">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="reveal"><span class="section-label">Расписание</span><h2 class="section-title">Когда <em>тренироваться</em></h2></div>
+    <div class="tabs reveal">
+      <button class="tab-btn active" data-group="t-week">Пн – Пт</button>
+      <button class="tab-btn" data-group="t-weekend">Выходные</button>
+    </div>
+    <div id="t-week"><table class="schedule-table"><thead><tr><th>Время</th><th>Программа</th><th>Тренер</th><th>Корт</th><th>Места</th></tr></thead><tbody><tr><td>09:00–10:30</td><td>Взрослые начинающие</td><td>М. Волкова</td><td>Хард №1</td><td><span class="badge-available">2 свободно</span></td></tr><tr><td>11:00–12:00</td><td>Детская (4–8 лет)</td><td>М. Волкова</td><td>Мини-корт</td><td><span class="badge-available">3 свободно</span></td></tr><tr><td>12:30–14:00</td><td>Взрослые продвинутые</td><td>А. Соколов</td><td>Хард №2</td><td><span class="badge-available">1 свободно</span></td></tr><tr><td>16:00–17:30</td><td>Детская (9–14 лет)</td><td>Д. Коваль</td><td>Хард №3</td><td><span class="badge-available">4 свободно</span></td></tr><tr><td>18:00–19:30</td><td>Взрослые интенсив</td><td>А. Соколов</td><td>Хард №1</td><td><span class="badge-booking">Записаться</span></td></tr><tr><td>20:00–21:30</td><td>Любительская игра</td><td>Д. Коваль</td><td>Хард №2</td><td><span class="badge-booking">Записаться</span></td></tr></tbody></table></div>
+    <div id="t-weekend" style="display:none"><table class="schedule-table"><thead><tr><th>Время</th><th>Программа</th><th>Тренер</th><th>Корт</th><th>Места</th></tr></thead><tbody><tr><td>10:00–11:30</td><td>Взрослые все уровни</td><td>А. Соколов</td><td>Хард №1</td><td><span class="badge-available">3 свободно</span></td></tr><tr><td>11:00–12:30</td><td>Детская секция</td><td>М. Волкова</td><td>Мини-корт</td><td><span class="badge-available">2 свободно</span></td></tr><tr><td>13:00–14:30</td><td>Индивидуальные</td><td>Д. Коваль</td><td>Хард №2</td><td><span class="badge-booking">Записаться</span></td></tr><tr><td>15:00–17:00</td><td>Турнирная тренировка</td><td>А. Соколов</td><td>Грунт №1</td><td><span class="badge-available">5 свободно</span></td></tr></tbody></table></div>
+  </div>
+</section>
+<section class="booking-section" id="booking">
+  <div class="booking-inner" style="max-width:1100px;margin:0 auto;padding:90px 0">
+    <div class="booking-grid">
+      <div class="booking-info">
+        <span class="section-label">Запись онлайн</span>
+        <h2 class="section-title">Запишись на<br><em>теннис</em> сегодня</h2>
+        <p>Пробное занятие бесплатно для новых учеников. Выбери удобное время — ответим в течение 15 минут.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text"><h4>Выбери программу</h4><p>Групповые, индивидуальные или детские занятия</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text"><h4>Укажи время</h4><p>Гибкое расписание каждый день с 7:00 до 23:00</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text"><h4>Заполни форму</h4><p>Имя и телефон — больше ничего не нужно</p></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text"><h4>Получи подтверждение</h4><p>Перезвоним в течение 15 минут</p></div></div>
+        </div>
+        <div style="margin-top:1.5rem;padding:1.2rem;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.4);border-radius:12px"><p style="color:rgba(255,255,255,.9);font-size:.9rem">🎁 <strong>Первое занятие бесплатно</strong> для новых учеников при записи онлайн!</p></div>
+      </div>
+      <div class="reveal">
+        <div class="widget-box">
+          <div class="widget-box-header"><span class="ico">🎾</span><h3>Запись на теннис</h3></div>
+          <p>Выберите программу и удобное время — форма займёт 1 минуту</p>
+          <div class="widget-tabs">
+            <button class="widget-tab active">Групповые</button>
+            <button class="widget-tab">Индивидуальные</button>
+            <button class="widget-tab">Детские</button>
+          </div>
+          <div style="background:#f5f9f6;border-radius:12px;padding:1rem;margin:1rem 0">
+            <div style="font-family:Montserrat,sans-serif;font-weight:600;font-size:.78rem;color:#2e7d52;margin-bottom:.6rem;letter-spacing:1px">БЛИЖАЙШЕЕ СВОБОДНОЕ ВРЕМЯ</div>
+            <div style="display:flex;flex-direction:column;gap:.4rem">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.65rem .9rem;background:#fff;border-radius:10px;cursor:pointer;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#1a5c3a'" onmouseout="this.style.borderColor='transparent'">
+                <div><span style="font-family:Montserrat,sans-serif;font-weight:700;font-size:.92rem">Сегодня 18:00</span><span style="color:#6b7f72;font-size:.8rem;margin-left:.6rem">Взрослые интенсив</span></div>
+                <span style="background:rgba(26,92,58,.1);color:#1a5c3a;padding:.2rem .7rem;border-radius:100px;font-size:.75rem;font-weight:600">2 места</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.65rem .9rem;background:#fff;border-radius:10px;cursor:pointer;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#1a5c3a'" onmouseout="this.style.borderColor='transparent'">
+                <div><span style="font-family:Montserrat,sans-serif;font-weight:700;font-size:.92rem">Завтра 09:00</span><span style="color:#6b7f72;font-size:.8rem;margin-left:.6rem">Взрослые начинающие</span></div>
+                <span style="background:rgba(26,92,58,.1);color:#1a5c3a;padding:.2rem .7rem;border-radius:100px;font-size:.75rem;font-weight:600">2 места</span>
+              </div>
+            </div>
+          </div>
+          <div class="widget-divider"></div>
+          <div id="SiteWidgetMoyklass94033"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="cta-banner"><h2>Попробуй падель — новый вид спорта!</h2><p>Первое занятие по паделю бесплатно для учеников теннисной секции</p><a href="padel.html" class="btn btn-dark">🏸 Узнать о падель</a></div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-brand-logo"><span class="badge">CT</span> CoolTennis</div><p>Профессиональный теннисный клуб в Москве.</p></div>
+    <div class="footer-col"><h4>Теннис</h4><ul><li><a href="#programs">Программы</a></li><li><a href="#coaches">Тренеры</a></li><li><a href="#schedule">Расписание</a></li><li><a href="#courts">Корты</a></li></ul></div>
+    <div class="footer-col"><h4>Клуб</h4><ul><li><a href="index.html#about">О нас</a></li><li><a href="padel.html">Падель</a></li><li><a href="index.html#contacts">Контакты</a></li></ul></div>
+    <div class="footer-col"><h4>Контакты</h4><ul><li><a href="index.html#contacts">Москва, ул. Теннисная, 12</a></li><li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li><li><a href="mailto:info@cooltennis.ru">info@cooltennis.ru</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2024 Cool Tennis. Все права защищены.</p><p>Политика конфиденциальности</p></div>
+</footer>
+<a href="#booking" class="float-book" id="floatBtn">🎾 Записаться</a>
+<script src="https://app.moyklass.com/api/site/widget/?id=01jTgT6XCVf9o6hPAY44QZKUF3wk4MKYrXnh" type="text/javascript" charset="UTF-8"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

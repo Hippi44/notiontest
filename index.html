@@ -3,387 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Cool Tennis — Теннисный клуб в Москве</title>
-<meta name="description" content="Теннисный клуб Cool Tennis. Тренировки для взрослых и детей. Запись онлайн.">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--g:#1a5c3a;--gd:#0d3b25;--y:#f5c518;--w:#fff;--t:#1a2e24}
-html{scroll-behavior:smooth}
-body{font-family:Inter,sans-serif;color:var(--t);overflow-x:hidden}
-a{text-decoration:none}
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;transition:.3s;background:transparent}
-nav.on{background:rgba(13,59,37,.96);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.2)}
-.logo{font-family:Montserrat,sans-serif;font-weight:900;font-size:1.4rem;color:#fff;display:flex;align-items:center;gap:8px}
-.logo b{background:var(--y);color:var(--gd);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:.85rem}
-.logo span{color:var(--y)}
-.links{display:flex;gap:1.8rem;list-style:none}
-.links a{color:rgba(255,255,255,.85);font-family:Montserrat,sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
-.links a:hover,.links a.cta{color:var(--y)}
-.links a.cta{background:var(--y);color:var(--gd);padding:.45rem 1.2rem;border-radius:100px}
-.links a.cta:hover{background:#ffd83a}
-.burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
-.burger span{display:block;width:25px;height:2px;background:#fff;border-radius:2px;transition:.3s}
-.mob{display:none;position:fixed;inset:0;z-index:998;background:var(--gd);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
-.mob.open{display:flex}
-.mob a{color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:1.5rem;transition:color .2s}
-.mob a:hover{color:var(--y)}
-.mob-x{position:absolute;top:1.5rem;right:5%;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
-/* HERO */
-.hero{min-height:100vh;background:url(https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1600&q=80&fit=crop)center/cover no-repeat;position:relative;display:flex;align-items:center;padding:0 5%}
-.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,59,37,.92)0%,rgba(13,59,37,.5)60%,rgba(0,0,0,.15)100%)}
-.hero-in{position:relative;z-index:1;max-width:640px}
-.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.4);color:var(--y);border-radius:100px;padding:.35rem .9rem;font-family:Montserrat,sans-serif;font-weight:700;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.4rem}
-.badge::before{content:'●';font-size:.45rem;animation:blink 1.5s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:Montserrat,sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.8rem);color:#fff;line-height:1.1;margin-bottom:1.1rem;text-shadow:0 2px 10px rgba(0,0,0,.3)}
-.hero h1 em{color:var(--y);font-style:normal}
-.hero p{color:rgba(255,255,255,.85);font-size:clamp(.95rem,2vw,1.1rem);line-height:1.7;margin-bottom:2rem;max-width:500px}
-.btns{display:flex;gap:.9rem;flex-wrap:wrap}
-.btn{padding:.85rem 1.9rem;border-radius:100px;font-family:Montserrat,sans-serif;font-weight:800;font-size:.95rem;display:inline-flex;align-items:center;gap:7px;transition:.2s;cursor:pointer;border:none}
-.btn-y{background:var(--y);color:var(--gd);box-shadow:0 4px 18px rgba(245,197,24,.4)}
-.btn-y:hover{background:#ffd83a;transform:translateY(-2px)}
-.btn-o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
-.btn-o:hover{border-color:#fff;background:rgba(255,255,255,.1)}
-.stats{position:absolute;bottom:0;left:0;right:0;display:flex;background:rgba(13,59,37,.9);backdrop-filter:blur(10px)}
-.stat{flex:1;padding:1.3rem 1rem;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
-.stat:last-child{border:none}
-.stat strong{display:block;font-family:Montserrat,sans-serif;font-weight:900;font-size:1.7rem;color:var(--y)}
-.stat span{font-size:.75rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px}
-/* SECTIONS */
-section{padding:80px 5%}
-.lbl{font-family:Montserrat,sans-serif;font-weight:700;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:#2e7d52;margin-bottom:.6rem;display:block}
-h2{font-family:Montserrat,sans-serif;font-weight:900;font-size:clamp(1.7rem,3.5vw,2.6rem);color:var(--gd);margin-bottom:.8rem}
-h2 em{color:var(--g);font-style:normal}
-.sub{color:#6b7f72;font-size:1.05rem;line-height:1.7;margin-bottom:2.5rem;max-width:560px}
-/* ABOUT */
-.about{background:#f7faf8}
-.about-g{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto}
-.about-img{position:relative;border-radius:20px;overflow:hidden}
-.about-img img{width:100%;height:480px;object-fit:cover;display:block}
-.about-img .ab{position:absolute;bottom:20px;left:20px;background:#fff;border-radius:12px;padding:12px 18px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
-.about-img .ab strong{font-family:Montserrat,sans-serif;font-weight:900;font-size:1.5rem;color:var(--g);display:block}
-.about-img .ab span{font-size:.8rem;color:#6b7f72}
-.feat{display:flex;flex-direction:column;gap:1.4rem;margin-top:1.5rem}
-.feat-i{display:flex;gap:1rem;align-items:flex-start}
-.feat-ic{width:44px;height:44px;background:rgba(26,92,58,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-.feat-i h4{font-family:Montserrat,sans-serif;font-weight:700;font-size:.95rem;color:var(--gd);margin-bottom:.3rem}
-.feat-i p{color:#6b7f72;font-size:.88rem;line-height:1.6}
-/* PROGRAMS */
-.prog-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1200px;margin:0 auto}
-.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);transition:.25s}
-.card:hover{transform:translateY(-4px);box-shadow:0 8px 36px rgba(0,0,0,.13)}
-.card-h{background:var(--g);padding:1.5rem 1.3rem}
-.card-h .ico{font-size:2rem;margin-bottom:.7rem}
-.card-h h3{font-family:Montserrat,sans-serif;font-weight:800;color:#fff;font-size:1.05rem;margin-bottom:.4rem}
-.card-h p{color:rgba(255,255,255,.8);font-size:.83rem;line-height:1.5}
-.card-b{padding:1.3rem}
-.card-b ul{list-style:none;margin-bottom:1.2rem}
-.card-b ul li{padding:.35rem 0;border-bottom:1px solid #f0f0f0;font-size:.87rem;color:#4a5c52}
-.card-b ul li::before{content:'✓';color:var(--g);font-weight:700;margin-right:.5rem}
-.price{font-family:Montserrat,sans-serif;font-weight:900;color:var(--g);font-size:1.2rem;margin-bottom:1rem}
-.price span{font-size:.8rem;font-weight:400;color:#8a9e94}
-.btn-g{display:block;text-align:center;background:var(--g);color:#fff;padding:.65rem;border-radius:100px;font-family:Montserrat,sans-serif;font-weight:700;font-size:.85rem;transition:.2s}
-.btn-g:hover{background:var(--gd)}
-/* COURTS */
-.courts{background:var(--gd);color:#fff}
-.courts h2,.courts .lbl{color:#fff}
-.courts em{color:var(--y)}
-.courts-g{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1100px;margin:0 auto}
-.courts-img img{width:100%;height:400px;object-fit:cover;border-radius:16px}
-.court-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.court-i{background:rgba(255,255,255,.08);border-radius:12px;padding:1.2rem;transition:.2s}
-.court-i:hover{background:rgba(255,255,255,.14)}
-.court-i .ico{font-size:1.5rem;margin-bottom:.5rem}
-.court-i h4{font-family:Montserrat,sans-serif;font-weight:700;font-size:.92rem;color:#fff;margin-bottom:.3rem}
-.court-i p{font-size:.82rem;color:rgba(255,255,255,.65)}
-/* COACHES */
-.coaches-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1000px;margin:0 auto}
-.coach{background:#fff;border-radius:16px;padding:2rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:.25s}
-.coach:hover{transform:translateY(-3px)}
-.coach-av{width:80px;height:80px;background:linear-gradient(135deg,var(--g),#4caf80);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem}
-.coach h3{font-family:Montserrat,sans-serif;font-weight:800;font-size:1rem;color:var(--gd);margin-bottom:.3rem}
-.coach .role{color:var(--g);font-size:.82rem;font-weight:600;margin-bottom:.7rem}
-.coach p{font-size:.85rem;color:#6b7f72;line-height:1.6}
-/* SCHEDULE */
-.sched{background:#f7faf8}
-.tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
-.tab{padding:.5rem 1.2rem;border-radius:100px;border:2px solid #dde8e0;font-family:Montserrat,sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;transition:.2s;background:#fff;color:var(--t)}
-.tab.act{background:var(--g);color:#fff;border-color:var(--g)}
-table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07)}
-table th{background:var(--g);color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:.82rem;padding:1rem;text-align:left}
-table td{padding:.85rem 1rem;border-bottom:1px solid #f0f4f2;font-size:.88rem;color:var(--t)}
-table tr:last-child td{border:none}
-table tr:hover td{background:#f7faf8}
-/* BOOKING */
-.booking{background:linear-gradient(135deg,var(--gd)0%,var(--g)100%);color:#fff}
-.booking h2,.booking .lbl{color:#fff}
-.booking em{color:var(--y)}
-.book-g{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start;max-width:1100px;margin:0 auto}
-.steps{display:flex;flex-direction:column;gap:1.2rem}
-.step{display:flex;gap:1rem;align-items:flex-start}
-.step-n{width:36px;height:36px;background:var(--y);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Montserrat,sans-serif;font-weight:900;color:var(--gd);font-size:1rem;flex-shrink:0}
-.step h4{font-family:Montserrat,sans-serif;font-weight:700;font-size:.95rem;color:#fff;margin-bottom:.2rem}
-.step p{font-size:.85rem;color:rgba(255,255,255,.75)}
-.widget-wrap{background:#fff;border-radius:20px;padding:2rem;box-shadow:0 8px 40px rgba(0,0,0,.2)}
-.widget-wrap h3{font-family:Montserrat,sans-serif;font-weight:800;color:var(--gd);font-size:1.1rem;margin-bottom:.3rem}
-.widget-wrap .wsub{color:#6b7f72;font-size:.85rem;margin-bottom:1.2rem}
-/* REVIEWS */
-.reviews-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1100px;margin:0 auto}
-.rev{background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,.07)}
-.stars{color:var(--y);font-size:1.1rem;margin-bottom:.7rem}
-.rev p{font-size:.9rem;color:#4a5c52;line-height:1.65;margin-bottom:1rem}
-.rev-auth{display:flex;align-items:center;gap:.7rem}
-.rev-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--g),#4caf80);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:.85rem}
-.rev-nm strong{display:block;font-size:.85rem;color:var(--gd);font-weight:600}
-.rev-nm span{font-size:.78rem;color:#8a9e94}
-/* CONTACTS */
-.contacts{background:#f7faf8}
-.cont-g{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto}
-.cont-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
-.cont-ic{width:44px;height:44px;background:rgba(26,92,58,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.cont-ic h4{font-family:Montserrat,sans-serif;font-weight:700;font-size:.9rem;color:var(--gd);margin-bottom:.2rem}
-.cont-ic+div h4{font-family:Montserrat,sans-serif;font-weight:700;font-size:.9rem;color:var(--gd);margin-bottom:.2rem}
-.map-btn{display:inline-flex;align-items:center;gap:8px;background:var(--g);color:#fff;padding:.75rem 1.5rem;border-radius:100px;font-family:Montserrat,sans-serif;font-weight:700;font-size:.85rem;transition:.2s;margin-top:1rem}
-.map-btn:hover{background:var(--gd)}
-/* FOOTER */
-footer{background:var(--gd);padding:50px 5% 30px}
-.foot-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;max-width:1200px;margin:0 auto 2rem}
-.foot-brand p{color:rgba(255,255,255,.6);font-size:.85rem;line-height:1.6;margin-top:.7rem}
-.foot-col h4{font-family:Montserrat,sans-serif;font-weight:700;color:var(--y);font-size:.85rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.5px}
-.foot-col ul{list-style:none}
-.foot-col ul li{margin-bottom:.5rem}
-.foot-col ul li a{color:rgba(255,255,255,.65);font-size:.85rem;transition:color .2s}
-.foot-col ul li a:hover{color:#fff}
-.foot-bot{max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center}
-.foot-bot p{color:rgba(255,255,255,.45);font-size:.8rem}
-/* FLOAT */
-.float-btn{position:fixed;bottom:2rem;right:2rem;z-index:998;background:var(--y);color:var(--gd);padding:.85rem 1.6rem;border-radius:100px;font-family:Montserrat,sans-serif;font-weight:800;font-size:.9rem;box-shadow:0 4px 20px rgba(245,197,24,.5);display:none;align-items:center;gap:7px;transition:.2s}
-.float-btn:hover{background:#ffd83a;transform:translateY(-2px)}
-.float-btn.show{display:flex}
-/* REVEAL */
-.rv{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
-.rv.vis{opacity:1;transform:none}
-/* RESPONSIVE */
-@media(max-width:900px){
-.links{display:none}
-.burger{display:flex}
-.about-g,.courts-g,.book-g,.cont-g{grid-template-columns:1fr}
-.prog-g,.coaches-g,.reviews-g{grid-template-columns:1fr 1fr}
-.foot-g{grid-template-columns:1fr 1fr}
-}
-@media(max-width:600px){
-.prog-g,.coaches-g,.reviews-g,.foot-g{grid-template-columns:1fr}
-.stats{display:grid;grid-template-columns:1fr 1fr}
-.court-list{grid-template-columns:1fr}
-}
-</style>
+<title>Cool Tennis — Теннис и Падель в Москве</title>
+<meta name="description" content="Теннисный клуб Cool Tennis. Теннис и падель в Москве. Запись онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="mob" id="mob">
-  <button class="mob-x" id="mobX">✕</button>
-  <a href="#about" onclick="closeMob()">О клубе</a>
-  <a href="#programs" onclick="closeMob()">Программы</a>
-  <a href="#courts" onclick="closeMob()">Корты</a>
-  <a href="#coaches" onclick="closeMob()">Тренеры</a>
-  <a href="#schedule" onclick="closeMob()">Расписание</a>
-  <a href="#booking" onclick="closeMob()" style="color:var(--y)">Записаться</a>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#10005;</button>
+  <a href="index.html">Главная</a>
+  <a href="tennis.html">Теннис</a>
+  <a href="padel.html">Падель</a>
+  <a href="#booking">Записаться</a>
 </div>
-<nav id="nav">
-  <a href="#" class="logo"><b>CT</b> Cool<span>Tennis</span></a>
-  <ul class="links">
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-logo"><span class="badge">CT</span> CoolTennis</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Главная</a></li>
+    <li><a href="tennis.html">🎾 Теннис</a></li>
+    <li><a href="padel.html">🏸 Падель</a></li>
     <li><a href="#about">О клубе</a></li>
-    <li><a href="#programs">Программы</a></li>
-    <li><a href="#courts">Корты</a></li>
-    <li><a href="#coaches">Тренеры</a></li>
-    <li><a href="#schedule">Расписание</a></li>
     <li><a href="#contacts">Контакты</a></li>
-    <li><a href="#booking" class="cta">Записаться</a></li>
+    <li><a href="#booking" class="nav-cta">Записаться</a></li>
   </ul>
-  <button class="burger" id="burg" aria-label="Меню"><span></span><span></span><span></span></button>
+  <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
 </nav>
-<section class="hero" id="hero">
-  <div class="hero-in">
-    <div class="badge">Теннисный клуб в Москве</div>
+<section class="hero" style="background-image:url('https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1800&q=80&fit=crop')" id="home">
+  <div class="hero-content">
+    <div class="pill"><span class="dot"></span>Теннис и Падель в Москве</div>
     <h1>Твоя игра начинается<br>здесь, в <em>Cool Tennis</em></h1>
-    <p>Профессиональные тренеры, современные корты и программы для любого уровня — от новичка до мастера. Запись за 2 минуты.</p>
-    <div class="btns">
-      <a href="#booking" class="btn btn-y">🎾 Записаться на тренировку</a>
-      <a href="#programs" class="btn btn-o">Узнать о программах</a>
+    <p>Профессиональные тренеры, современные корты и программы для любого уровня. Теннис и падель — выбери свой вид спорта и запишись за 2 минуты.</p>
+    <div class="hero-btns">
+      <a href="tennis.html" class="btn btn-primary">🎾 Теннис</a>
+      <a href="padel.html" class="btn btn-outline">🏸 Падель</a>
     </div>
   </div>
-  <div class="stats">
+  <div class="hero-stats">
     <div class="stat"><strong>12+</strong><span>лет опыта</span></div>
-    <div class="stat"><strong>8</strong><span>кортов</span></div>
-    <div class="stat"><strong>500+</strong><span>учеников</span></div>
-    <div class="stat"><strong>15</strong><span>тренеров</span></div>
+    <div class="stat"><strong>10</strong><span>кортов</span></div>
+    <div class="stat"><strong>800+</strong><span>учеников</span></div>
+    <div class="stat"><strong>20</strong><span>тренеров</span></div>
   </div>
 </section>
-<section class="about" id="about">
-  <div class="about-g">
-    <div class="about-img rv">
-      <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&q=80&fit=crop" alt="Тренировка Cool Tennis" loading="lazy">
-      <div class="ab"><strong>№1</strong><span>в Москве по рейтингу</span></div>
+<section style="padding:90px 5%;background:#fff" id="sports">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-center reveal">
+      <span class="section-label">Выбери вид спорта</span>
+      <h2 class="section-title">Теннис или <em>Падель</em>?</h2>
+      <p class="section-sub">Оба вида спорта доступны в нашем клубе. Каждый найдёт своё — от классики до современного тренда.</p>
     </div>
-    <div class="rv">
-      <span class="lbl">О нас</span>
-      <h2>Теннис — это больше,<br>чем <em>игра</em></h2>
-      <p class="sub">Cool Tennis — клуб для тех, кто хочет получать удовольствие от тенниса и развиваться как игрок. Мы создали пространство, где каждый найдёт своё место — от детских секций до профессиональных турниров.</p>
-      <div class="feat">
-        <div class="feat-i"><div class="feat-ic">🏅</div><div><h4>Сертифицированные тренеры</h4><p>Все наши тренеры имеют сертификат ITF и опыт работы с учениками от новичков до мастеров.</p></div></div>
-        <div class="feat-i"><div class="feat-ic">🎯</div><div><h4>Индивидуальный подход</h4><p>Программы составляются под каждого ученика с учётом уровня, целей, возраста и расписания.</p></div></div>
-        <div class="feat-i"><div class="feat-ic">📱</div><div><h4>Видеоанализ игры</h4><p>Записываем тренировки и разбираем прогресс — ты видишь и понимаешь над чем работать.</p></div></div>
+    <div class="sport-switcher">
+      <a href="tennis.html" class="sport-card reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800&q=80&fit=crop" alt="Теннис" loading="lazy">
+        <div class="sport-card-overlay">
+          <div class="sport-card-label">Классика</div>
+          <div class="sport-card-title">Теннис</div>
+          <div class="sport-card-desc">Один из самых популярных видов спорта в мире. Развивает координацию, выносливость и стратегическое мышление.</div>
+          <div class="sport-card-cta">Узнать больше →</div>
+        </div>
+      </a>
+      <a href="padel.html" class="sport-card padel reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&q=80&fit=crop" alt="Падель" loading="lazy">
+        <div class="sport-card-overlay">
+          <div class="sport-card-label">Тренд 2024</div>
+          <div class="sport-card-title">Падель</div>
+          <div class="sport-card-desc">Быстро развивающийся вид спорта — смесь тенниса и сквоша. Идеален для начинающих и любителей острых ощущений.</div>
+          <div class="sport-card-cta">Узнать больше →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section style="padding:90px 5%;background:#f5f9f6" id="about">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div class="reveal">
+      <div style="position:relative;border-radius:20px;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1580828343064-fde4fc206bc6?w=800&q=80&fit=crop" alt="О клубе" style="width:100%;height:480px;object-fit:cover" loading="lazy">
+        <div style="position:absolute;bottom:20px;left:20px;background:#fff;border-radius:12px;padding:14px 20px;box-shadow:0 4px 20px rgba(0,0,0,.12)"><strong style="display:block;font-family:Montserrat,sans-serif;font-weight:900;font-size:1.5rem;color:#1a5c3a">#1</strong><span style="font-size:.8rem;color:#6b7f72">в Москве по рейтингу</span></div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <span class="section-label">О нас</span>
+      <h2 class="section-title">Спорт — это <em>образ жизни</em></h2>
+      <p style="color:#6b7f72;line-height:1.75;margin-bottom:1.5rem">Cool Tennis — клуб для тех, кто хочет получать удовольствие от спорта и расти как игрок. Мы создали пространство, где каждый найдёт своё место — от первого урока до профессиональных турниров.</p>
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:44px;height:44px;background:rgba(26,92,58,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">🏅</div><div><h4 style="font-family:Montserrat,sans-serif;font-weight:700;color:#0a2e1a;margin-bottom:.3rem">Сертифицированные тренеры</h4><p style="color:#6b7f72;font-size:.88rem;line-height:1.6">ITF и FIP сертификаты, опыт от 5 лет.</p></div></div>
+        <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:44px;height:44px;background:rgba(26,92,58,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">🎯</div><div><h4 style="font-family:Montserrat,sans-serif;font-weight:700;color:#0a2e1a;margin-bottom:.3rem">Индивидуальный подход</h4><p style="color:#6b7f72;font-size:.88rem;line-height:1.6">Программы под каждого ученика.</p></div></div>
+        <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:44px;height:44px;background:rgba(26,92,58,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">📱</div><div><h4 style="font-family:Montserrat,sans-serif;font-weight:700;color:#0a2e1a;margin-bottom:.3rem">Видеоанализ игры</h4><p style="color:#6b7f72;font-size:.88rem;line-height:1.6">Записываем тренировки для быстрого прогресса.</p></div></div>
       </div>
     </div>
   </div>
 </section>
-<section id="programs" style="background:#fff">
-  <div class="rv" style="text-align:center;margin-bottom:2.5rem">
-    <span class="lbl">Тренировки</span>
-    <h2>Найди программу <em>для себя</em></h2>
-    <p class="sub" style="margin:0 auto">Групповые занятия, индивидуальные тренировки, детские секции и корпоративный теннис — выбери подходящее.</p>
-  </div>
-  <div class="prog-g">
-    <div class="card rv">
-      <div class="card-h"><div class="ico">🎾</div><h3>Взрослые группы</h3><p>Тренировки для взрослых любого уровня — от первой ракетки до опытных любителей</p></div>
-      <div class="card-b"><ul><li>Группы до 6 человек</li><li>Пн, Ср, Пт и выходные</li><li>Тренер на весь урок</li><li>Мячи включены</li></ul><div class="price">от 2 500 ₽<span> / занятие</span></div><a href="#booking" class="btn-g">Записаться</a></div>
+<section style="padding:90px 5%;background:#fff">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-center reveal">
+      <span class="section-label">Почему мы</span>
+      <h2 class="section-title">Всё для <em>идеальной тренировки</em></h2>
     </div>
-    <div class="card rv">
-      <div class="card-h" style="background:#d4a017"><div class="ico">👶</div><h3>Детская секция</h3><p>Занятия для детей от 4 лет — игровой подход, который влюбляет в теннис надолго</p></div>
-      <div class="card-b"><ul><li>Возраст от 4 до 16 лет</li><li>Игровой подход</li><li>Мини-корты для малышей</li><li>Турниры и соревнования</li></ul><div class="price">от 1 800 ₽<span> / занятие</span></div><a href="#booking" class="btn-g">Записаться</a></div>
-    </div>
-    <div class="card rv">
-      <div class="card-h" style="background:#2e7d52"><div class="ico">⚡</div><h3>Индивидуально</h3><p>Персональные тренировки с тренером — максимальная эффективность за минимум времени</p></div>
-      <div class="card-b"><ul><li>Тренер только с тобой</li><li>Любой удобный график</li><li>Видеоразбор техники</li><li>Быстрый прогресс</li></ul><div class="price">от 4 500 ₽<span> / час</span></div><a href="#booking" class="btn-g">Записаться</a></div>
-    </div>
-    <div class="card rv">
-      <div class="card-h" style="background:#1a3a5c"><div class="ico">🏢</div><h3>Корпоративный</h3><p>Теннис для команд и компаний — корпоративы, тимбилдинг и турниры для коллег</p></div>
-      <div class="card-b"><ul><li>Аренда кортов целиком</li><li>Тренер для группы</li><li>Организация турниров</li><li>Выездные занятия</li></ul><div class="price">от 15 000 ₽<span> / событие</span></div><a href="#booking" class="btn-g">Оставить заявку</a></div>
+    <div class="features-grid">
+      <div class="feature reveal reveal-delay-1"><div class="feature-icon">🏟️</div><h3>10 профессиональных кортов</h3><p>Хард, грунт и падель-корты. Крытые и открытые — доступны весь год.</p></div>
+      <div class="feature reveal reveal-delay-2"><div class="feature-icon">👨‍🏫</div><h3>20 сертифицированных тренеров</h3><p>Экс-профессионалы ATP и WTA, специалисты по теннису и паделю.</p></div>
+      <div class="feature reveal reveal-delay-3"><div class="feature-icon">📅</div><h3>Гибкое расписание</h3><p>Занятия с 7:00 до 23:00 каждый день. Онлайн-запись за 2 минуты.</p></div>
+      <div class="feature reveal reveal-delay-1"><div class="feature-icon">🛋️</div><h3>Комфортная инфраструктура</h3><p>Раздевалки, душевые, кафе, зона отдыха и детская площадка.</p></div>
+      <div class="feature reveal reveal-delay-2"><div class="feature-icon">🏆</div><h3>Турниры и соревнования</h3><p>Регулярные внутренние турниры для всех уровней, городские и национальные соревнования.</p></div>
+      <div class="feature reveal reveal-delay-3"><div class="feature-icon">🎥</div><h3>Видеоанализ и статистика</h3><p>Камеры на кортах, автоматический разбор техники и статистика прогресса.</p></div>
     </div>
   </div>
 </section>
-<section class="courts" id="courts">
-  <div class="courts-g">
-    <div class="rv">
-      <span class="lbl">Инфраструктура</span>
-      <h2>Наши <em>корты</em></h2>
-      <p class="sub" style="color:rgba(255,255,255,.75)">8 современных кортов с профессиональным покрытием — играй в любое время года в любую погоду.</p>
-      <div class="court-list">
-        <div class="court-i"><div class="ico">🏟️</div><h4>Хард (4 корта)</h4><p>Крытые, с подогревом, доступны весь год</p></div>
-        <div class="court-i"><div class="ico">🌿</div><h4>Грунт (2 корта)</h4><p>Открытые, классическое красное покрытие</p></div>
-        <div class="court-i"><div class="ico">💡</div><h4>Освещение</h4><p>LED-подсветка — играй хоть до полуночи</p></div>
-        <div class="court-i"><div class="ico">🛋️</div><h4>Лаундж</h4><p>Кафе, раздевалки и зона отдыха после игры</p></div>
+<section style="padding:90px 5%;background:#f5f9f6">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-center reveal">
+      <span class="section-label">Отзывы</span>
+      <h2 class="section-title">Что говорят наши <em>ученики</em></h2>
+    </div>
+    <div class="grid-3">
+      <div class="review-card reveal reveal-delay-1"><div class="review-stars">★★★★★</div><p class="review-text">«Занимаюсь уже год — прогресс колоссальный! Алексей — потрясающий тренер, объясняет технику так, что сразу всё понятно.»</p><div class="review-author"><div class="review-avatar">АК</div><div class="review-name"><strong>Анна К.</strong><span>Теннис, 1 год</span></div></div></div>
+      <div class="review-card reveal reveal-delay-2"><div class="review-stars">★★★★★</div><p class="review-text">«Попробовал падель — и влюбился! Очень динамично и весело. Тренер Дмитрий объясняет всё чётко. Уже через месяц играю на уровне, которого не ожидал.»</p><div class="review-author"><div class="review-avatar">МС</div><div class="review-name"><strong>Михаил С.</strong><span>Падель, 3 месяца</span></div></div></div>
+      <div class="review-card reveal reveal-delay-3"><div class="review-stars">★★★★★</div><p class="review-text">«Записала сына 6 лет на детскую секцию. Мария — просто волшебник, ребёнок в восторге! Уже через месяц начал делать правильные удары.»</p><div class="review-author"><div class="review-avatar">ЕВ</div><div class="review-name"><strong>Елена В.</strong><span>Детская секция</span></div></div></div>
+    </div>
+  </div>
+</section>
+<section class="booking-section" id="booking">
+  <div class="booking-inner" style="max-width:1100px;margin:0 auto;padding:90px 0">
+    <div class="booking-grid">
+      <div class="booking-info">
+        <span class="section-label">Запись онлайн</span>
+        <h2 class="section-title">Запишись на <em>тренировку</em><br>прямо сейчас</h2>
+        <p>Выбери программу и удобное время — ответим в течение 15 минут и подберём тренера.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text"><h4>Выбери вид спорта</h4><p>Теннис или падель — у нас есть всё</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text"><h4>Выбери программу</h4><p>Взрослые, детские, индивидуальные занятия</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text"><h4>Укажи время</h4><p>Гибкое расписание каждый день с 7:00 до 23:00</p></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text"><h4>Получи подтверждение</h4><p>Перезвоним в течение 15 минут</p></div></div>
+        </div>
       </div>
-    </div>
-    <div class="courts-img rv"><img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800&q=80&fit=crop" alt="Корты Cool Tennis" loading="lazy"></div>
-  </div>
-</section>
-<section id="coaches">
-  <div class="rv" style="text-align:center;margin-bottom:2.5rem">
-    <span class="lbl">Команда</span>
-    <h2>Наши <em>тренеры</em></h2>
-    <p class="sub" style="margin:0 auto">Профессионалы с опытом работы на турнирах ATP и WTA. Каждый найдёт своего тренера.</p>
-  </div>
-  <div class="coaches-g">
-    <div class="coach rv"><div class="coach-av">🎾</div><h3>Алексей Соколов</h3><div class="role">Главный тренер · 15 лет опыта</div><p>Экс-профессионал ATP, специалист по технике удара и тактике одиночной игры.</p></div>
-    <div class="coach rv"><div class="coach-av">🏅</div><h3>Мария Волкова</h3><div class="role">Тренер · 10 лет опыта</div><p>Специалист по детскому теннису и групповым занятиям. Автор методики Cool Kids Tennis.</p></div>
-    <div class="coach rv"><div class="coach-av">⚡</div><h3>Дмитрий Коваль</h3><div class="role">Тренер · 8 лет опыта</div><p>Специализация — физподготовка теннисистов и индивидуальные тренировки высокой интенсивности.</p></div>
-  </div>
-</section>
-<section class="sched" id="schedule">
-  <span class="lbl">Расписание</span>
-  <h2>Когда <em>тренироваться</em></h2>
-  <div class="tabs">
-    <button class="tab act">Пн–Пт</button>
-    <button class="tab">Выходные</button>
-  </div>
-  <table>
-    <thead><tr><th>Время</th><th>Программа</th><th>Тренер</th><th>Корт</th><th>Места</th></tr></thead>
-    <tbody>
-      <tr><td>09:00 – 10:30</td><td>Взрослые начинающие</td><td>М. Волкова</td><td>Хард №1</td><td>2 свободно</td></tr>
-      <tr><td>11:00 – 12:00</td><td>Детская секция (4–8 лет)</td><td>М. Волкова</td><td>Мини-корт</td><td>3 свободно</td></tr>
-      <tr><td>12:30 – 14:00</td><td>Взрослые продвинутые</td><td>А. Соколов</td><td>Хард №2</td><td>1 свободно</td></tr>
-      <tr><td>16:00 – 17:30</td><td>Детская секция (9–14 лет)</td><td>Д. Коваль</td><td>Хард №3</td><td>4 свободно</td></tr>
-      <tr><td>18:00 – 19:30</td><td>Взрослые интенсив</td><td>А. Соколов</td><td>Хард №1</td><td>Записаться</td></tr>
-      <tr><td>20:00 – 21:30</td><td>Любительская игра</td><td>Д. Коваль</td><td>Хард №2</td><td>Записаться</td></tr>
-    </tbody>
-  </table>
-</section>
-<section class="booking" id="booking">
-  <div class="book-g">
-    <div class="rv">
-      <span class="lbl" style="color:rgba(255,255,255,.7)">Запись онлайн</span>
-      <h2>Запишись на<br><em>тренировку</em> прямо сейчас</h2>
-      <p style="color:rgba(255,255,255,.75);margin-bottom:2rem;line-height:1.7">Выбери удобное время и программу — ответим в течение 15 минут и подберём тренера.</p>
-      <div class="steps">
-        <div class="step"><div class="step-n">1</div><div><h4>Выбери программу</h4><p>Взрослые, детские, индивидуальные или корпоративные занятия</p></div></div>
-        <div class="step"><div class="step-n">2</div><div><h4>Укажи время</h4><p>Выбери удобный день и время — у нас гибкое расписание</p></div></div>
-        <div class="step"><div class="step-n">3</div><div><h4>Заполни форму</h4><p>Имя и телефон — больше ничего не нужно</p></div></div>
-        <div class="step"><div class="step-n">4</div><div><h4>Получи подтверждение</h4><p>Мы позвоним и подтвердим запись в течение 15 минут</p></div></div>
-      </div>
-    </div>
-    <div class="rv">
-      <div class="widget-wrap">
-        <h3>🎾 Запись на тренировку</h3>
-        <p class="wsub">Выберите программу и удобное время — форма займёт 1 минуту</p>
-        <div id="SiteWidgetMoyklass94033"></div>
+      <div class="reveal">
+        <div class="widget-box">
+          <div class="widget-box-header"><span class="ico">🎾</span><h3>Запись на тренировку</h3></div>
+          <p>Выберите вид спорта и программу — форма займёт 1 минуту</p>
+          <div class="widget-tabs">
+            <button class="widget-tab active">🎾 Теннис</button>
+            <button class="widget-tab">🏸 Падель</button>
+          </div>
+          <div class="widget-divider"></div>
+          <div id="SiteWidgetMoyklass94033"></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<section id="reviews">
-  <div class="rv" style="text-align:center;margin-bottom:2.5rem">
-    <span class="lbl">Отзывы</span>
-    <h2>Что говорят наши <em>ученики</em></h2>
-  </div>
-  <div class="reviews-g">
-    <div class="rev rv"><div class="stars">★★★★★</div><p>«Занимаюсь уже год — прогресс колоссальный! Алексей — потрясающий тренер, объясняет технику так, что сразу всё понятно. Корты в идеальном состоянии.»</p><div class="rev-auth"><div class="rev-av">АК</div><div class="rev-nm"><strong>Анна К.</strong><span>Занимается 1 год</span></div></div></div>
-    <div class="rev rv"><div class="stars">★★★★★</div><p>«Записала сына 6 лет на детскую секцию. Мария — просто волшебник, ребёнок в восторге! Уже через месяц начал делать правильные удары. Рекомендую всем!»</p><div class="rev-auth"><div class="rev-av">ЕВ</div><div class="rev-nm"><strong>Елена В.</strong><span>Мама ученика</span></div></div></div>
-    <div class="rev rv"><div class="stars">★★★★★</div><p>«Брал корпоративный пакет для команды — организация на высшем уровне, тренеры профессионалы. Провели отличный тимбилдинг, все коллеги в восторге!»</p><div class="rev-auth"><div class="rev-av">МС</div><div class="rev-nm"><strong>Михаил С.</strong><span>Корпоративный клиент</span></div></div></div>
-  </div>
-</section>
-<section class="contacts" id="contacts">
-  <div class="cont-g">
-    <div class="rv">
-      <span class="lbl">Контакты</span>
-      <h2>Мы в <em>Москве</em></h2>
-      <div class="cont-item"><div class="cont-ic">📍</div><div><h4>Адрес</h4><p>Москва, ул. Теннисная, 12<br>м. Динамо, 5 мин. пешком</p></div></div>
-      <div class="cont-item"><div class="cont-ic">📞</div><div><h4>Телефон</h4><p>+7 (495) 123-45-67<br>Ежедневно с 8:00 до 22:00</p></div></div>
-      <div class="cont-item"><div class="cont-ic">📧</div><div><h4>Email</h4><p>info@cooltennis.ru</p></div></div>
-      <a href="https://yandex.ru/maps/" target="_blank" class="map-btn">🗺️ Открыть на Яндекс.Картах</a>
-    </div>
-    <div class="rv" style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);height:350px;display:flex;align-items:center;justify-content:center;color:#8a9e94;font-size:.9rem">
-      <div style="text-align:center"><div style="font-size:3rem;margin-bottom:1rem">🗺️</div><p>Карта загружается...</p><p style="font-size:.8rem;margin-top:.5rem">Москва, ул. Теннисная, 12</p></div>
+<section style="padding:90px 5%;background:#f5f9f6" id="contacts">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="grid-2">
+      <div class="reveal">
+        <span class="section-label">Контакты</span>
+        <h2 class="section-title">Мы в <em>Москве</em></h2>
+        <div style="display:flex;flex-direction:column;gap:1.2rem;margin-bottom:2rem">
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:44px;height:44px;background:rgba(26,92,58,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">📍</div><div><h4 style="font-family:Montserrat,sans-serif;font-weight:700;color:#0a2e1a;margin-bottom:.2rem">Адрес</h4><p style="color:#6b7f72;font-size:.9rem">Москва, ул. Теннисная, 12<br>м. Динамо, 5 мин. пешком</p></div></div>
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:44px;height:44px;background:rgba(26,92,58,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">📞</div><div><h4 style="font-family:Montserrat,sans-serif;font-weight:700;color:#0a2e1a;margin-bottom:.2rem">Телефон</h4><p style="color:#6b7f72;font-size:.9rem">+7 (495) 123-45-67<br>Ежедневно 8:00 — 22:00</p></div></div>
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:44px;height:44px;background:rgba(26,92,58,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">📧</div><div><h4 style="font-family:Montserrat,sans-serif;font-weight:700;color:#0a2e1a;margin-bottom:.2rem">Email</h4><p style="color:#6b7f72;font-size:.9rem">info@cooltennis.ru</p></div></div>
+        </div>
+        <a href="https://yandex.ru/maps/" target="_blank" class="btn btn-green" style="width:fit-content">🗺️ Открыть на Яндекс.Картах</a>
+      </div>
+      <div class="reveal reveal-delay-1" style="background:#fff;border-radius:20px;height:360px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,.08)">
+        <div style="text-align:center;color:#8a9e94"><div style="font-size:3rem;margin-bottom:1rem">🗺️</div><p>Москва, ул. Теннисная, 12</p></div>
+      </div>
     </div>
   </div>
 </section>
 <footer>
-  <div class="foot-g">
-    <div class="foot-brand">
-      <div class="logo" style="margin-bottom:.7rem"><b>CT</b> Cool<span>Tennis</span></div>
-      <p>Профессиональный теннисный клуб в Москве. Тренировки для всех уровней — от новичков до профессионалов.</p>
-    </div>
-    <div class="foot-col"><h4>Программы</h4><ul><li><a href="#programs">Взрослые группы</a></li><li><a href="#programs">Детская секция</a></li><li><a href="#programs">Индивидуально</a></li><li><a href="#programs">Корпоративный</a></li></ul></div>
-    <div class="foot-col"><h4>Клуб</h4><ul><li><a href="#about">О нас</a></li><li><a href="#courts">Корты</a></li><li><a href="#coaches">Тренеры</a></li><li><a href="#schedule">Расписание</a></li></ul></div>
-    <div class="foot-col"><h4>Контакты</h4><ul><li><a href="#contacts">Адрес</a></li><li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li><li><a href="mailto:info@cooltennis.ru">info@cooltennis.ru</a></li></ul></div>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-brand-logo"><span class="badge">CT</span> CoolTennis</div><p>Профессиональный клуб в Москве. Теннис и падель для всех уровней.</p></div>
+    <div class="footer-col"><h4>Виды спорта</h4><ul><li><a href="tennis.html">🎾 Теннис</a></li><li><a href="padel.html">🏸 Падель</a></li></ul></div>
+    <div class="footer-col"><h4>Клуб</h4><ul><li><a href="#about">О нас</a></li><li><a href="tennis.html#coaches">Тренеры</a></li><li><a href="tennis.html#schedule">Расписание</a></li></ul></div>
+    <div class="footer-col"><h4>Контакты</h4><ul><li><a href="#contacts">Адрес</a></li><li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li><li><a href="mailto:info@cooltennis.ru">info@cooltennis.ru</a></li></ul></div>
   </div>
-  <div class="foot-bot"><p>© 2024 Cool Tennis. Все права защищены.</p><p style="color:rgba(255,255,255,.45);font-size:.8rem">Политика конфиденциальности</p></div>
+  <div class="footer-bottom"><p>© 2024 Cool Tennis. Все права защищены.</p><p>Политика конфиденциальности</p></div>
 </footer>
-<a href="#booking" class="float-btn" id="floatBtn">🎾 Записаться</a>
+<a href="#booking" class="float-book" id="floatBtn">🎾 Записаться</a>
 <script src="https://app.moyklass.com/api/site/widget/?id=01jTgT6XCVf9o6hPAY44QZKUF3wk4MKYrXnh" type="text/javascript" charset="UTF-8"></script>
-<script>
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('on',scrollY>50);
-  document.getElementById('floatBtn').classList.toggle('show',scrollY>400);
-});
-document.getElementById('burg').addEventListener('click',()=>document.getElementById('mob').classList.add('open'));
-document.getElementById('mobX').addEventListener('click',closeMob);
-function closeMob(){document.getElementById('mob').classList.remove('open')}
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('act'));t.classList.add('act')}));
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}}));
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
